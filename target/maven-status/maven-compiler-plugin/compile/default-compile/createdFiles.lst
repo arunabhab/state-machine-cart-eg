@@ -1,7 +1,0 @@
-com\rssoftware\wcl\service\MasterMgmtService.class
-com\rssoftware\wcl\WclApplication.class
-com\rssoftware\wcl\service\MasterMgmtServiceImpl.class
-com\rssoftware\wcl\entity\Role.class
-com\rssoftware\wcl\controller\MasterDataController.class
-com\rssoftware\wcl\repository\RoleRepository.class
-com\rssoftware\wcl\util\WclProperties.class

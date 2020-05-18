@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: shopping-cart
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: aruna
+Implementation-Vendor-Id: com.rssoftware
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/shopping-cart
+Created-By: Maven Integration for Eclipse
+

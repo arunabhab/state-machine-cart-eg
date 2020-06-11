@@ -2,10 +2,12 @@ package com.poc.shoppingcart.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.poc.shoppingcart.entity.Customer;
+import com.poc.shoppingcart.repository.CustomerRepository;
 
 
 /**
@@ -16,6 +18,9 @@ import com.poc.shoppingcart.entity.Customer;
 @Service
 public class CustomerMgmtServiceImpl implements CustomerMgmtService{
 
+	@Autowired
+	CustomerRepository custRepo;
+	
 	@Override
 	public List<Customer> retrieveData() {
 		// TODO Auto-generated method stub
@@ -23,9 +28,9 @@ public class CustomerMgmtServiceImpl implements CustomerMgmtService{
 	}
 
 	@Override
-	public int putData(Customer cust) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void putData(Customer cust) {
+		custRepo.save(cust);
+		
 	}
 
 	

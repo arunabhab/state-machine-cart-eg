@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.poc.shoppingcart.entity.Cart;
+import com.poc.shoppingcart.entity.CartTemp;
 
 
 /**
@@ -14,16 +14,16 @@ import com.poc.shoppingcart.entity.Cart;
  */
 @Component
 @Service
-public class CartMgmtServiceImpl implements CartMgmtService{
+public class CartTempMgmtServiceImpl implements CartTempMgmtService{
 
 	@Override
-	public List<Cart> retrieveData() {
+	public List<CartTemp> retrieveData() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int putData(Cart cart) {
+	public int putData(CartTemp cartTemp) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

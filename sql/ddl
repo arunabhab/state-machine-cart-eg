@@ -33,3 +33,11 @@ CREATE TABLE shopping.item (
 	price_per_unit float8 NOT NULL,
 	CONSTRAINT item_pkey PRIMARY KEY (item_id)
 );
+
+
+CREATE TABLE shopping.cart_temp (
+	cart_id serial NOT NULL,
+	cust_id int4 NOT NULL,
+	crtn_ts timestamp NOT NULL
+);
+

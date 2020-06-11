@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.poc.shoppingcart.entity.Customer;
+import com.poc.shoppingcart.entity.Cart;
+import com.poc.shoppingcart.entity.CartTemp;
 
 
 /**
@@ -15,10 +16,10 @@ import com.poc.shoppingcart.entity.Customer;
 
 @Component
 @Service
-public interface CustomerMgmtService {
+public interface CartTempMgmtService {
 	
-	public List<Customer> retrieveData();
+	public List<CartTemp> retrieveData();
 	
-	public void putData(Customer cust);
+	public int putData(CartTemp cartTemp);
 
 }

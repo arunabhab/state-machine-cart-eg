@@ -19,6 +19,6 @@ public interface CartMgmtService {
 	
 	public List<Cart> retrieveData();
 	
-	public int putData(Cart cust);
+	public int putData(Cart cart);
 
 }

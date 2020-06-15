@@ -42,9 +42,10 @@ public class MasterDataController {
 	}
 	
 	
-	@ResponseBody
-	@RequestMapping(value = "/createCustomer", method = RequestMethod.POST)
-	public Integer createCustomer(@RequestBody Customer customer) throws Exception {
+//	@ResponseBody
+//	@RequestMapping(value = "/createCustomer", method = RequestMethod.POST)
+
+	public Integer createCustomer(Customer customer) throws Exception {
 		customerMgmtService.putData(customer);
 		return 1;
 

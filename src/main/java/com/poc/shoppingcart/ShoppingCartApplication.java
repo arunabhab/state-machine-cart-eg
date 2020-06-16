@@ -16,6 +16,7 @@ import com.poc.shoppingcart.controller.MasterDataController;
 import com.poc.shoppingcart.entity.Customer;
 import com.poc.shoppingcart.enums.Events;
 import com.poc.shoppingcart.enums.States;
+import com.poc.shoppingcart.service.CustomerMgmtService;
 
 /**
  * @author ArunabhaB
@@ -31,6 +32,9 @@ implements CommandLineRunner {
 	@Autowired
 	private StateMachine<States, Events> myStateMachine;
 	
+	@Autowired
+	CustomerMgmtService custMgmtService;
+	
 	@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(ShoppingCartApplication.class);
@@ -38,18 +42,6 @@ implements CommandLineRunner {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ShoppingCartApplication.class, args);
-		System.out.println("Before master controller");
-		MasterDataController masterController = new MasterDataController();
-		try {
-			System.out.println("inside try catch");
-		masterController.createCustomer(createCustomerObj("Sayanta"));
-		System.out.println("inside try catch but after method");
-
-		}catch(Exception ex) {
-			System.out.println("Could not save customer : "+ex);
-			ex.printStackTrace();
-		}
-		
 	}
 	
 	public static Customer createCustomerObj(String name) {
@@ -64,5 +56,19 @@ implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		myStateMachine.sendEvent(Events.E1);
 		myStateMachine.sendEvent(Events.E2);
+		
+		System.out.println("Before master controller");
+//		MasterDataController masterController = new MasterDataController();
+		try {
+			System.out.println("inside try catch");
+		custMgmtService.putData(createCustomerObj("Sayanta"));
+		System.out.println("inside try catch but after method");
+
+		}catch(Exception ex) {
+			System.out.println("Could not save customer : "+ex);
+			ex.printStackTrace();
+		}
+		
+
 	}
 }

@@ -2,16 +2,15 @@ package com.poc.shoppingcart.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.poc.shoppingcart.entity.Customer;
 import com.poc.shoppingcart.entity.Item;
-import com.poc.shoppingcart.service.CustomerMgmtService;
 import com.poc.shoppingcart.service.ItemService;
 
 /**
@@ -19,7 +18,7 @@ import com.poc.shoppingcart.service.ItemService;
  *
  */
 
-@Controller
+@RestController
 @RequestMapping("/masterdata")
 public class MasterDataController {
 
@@ -27,10 +26,6 @@ public class MasterDataController {
 	
 	@Autowired
 	ItemService itemService;
-	
-	@Autowired
-	CustomerMgmtService customerMgmtService;
-
 	
 
 	@ResponseBody
@@ -41,21 +36,7 @@ public class MasterDataController {
 
 	}
 	
-	
-//	@ResponseBody
-//	@RequestMapping(value = "/createCustomer", method = RequestMethod.POST)
 
-	public Integer createCustomer(Customer customer) throws Exception {
-		customerMgmtService.putData(customer);
-		return 1;
-
-	}
-	
-	@RequestMapping(value = "/getPage", method = RequestMethod.GET)
-	public String getPage() throws Exception {
-		return "upload";
-
-	}
 
 
 }
